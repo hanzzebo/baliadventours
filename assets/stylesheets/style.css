@@ -276,8 +276,9 @@ h1 em {
   border: 0;
   outline: none;
   padding: 14px 18px;
+  /* 16px minimum: iOS/iPadOS Safari zooms into inputs with smaller text */
   font:
-    400 15px/1 "Poppins",
+    400 16px/1 "Poppins",
     sans-serif;
   color: #fff;
   min-width: 0;
@@ -492,7 +493,55 @@ footer {
 }
 
 /* ── Tablet: unlock scroll, single column ── */
-@media (max-width: 1100px) {
+/* ── Large screens: one locked screen, sizes shrink with viewport height ──
+   Capped at the design values, so tall monitors look exactly as designed. */
+@media (min-width: 1024px) {
+  header {
+    padding: clamp(14px, 3.2vh, 32px) clamp(40px, 5.5vw, 80px);
+  }
+  main {
+    padding: clamp(8px, 6vh, 60px) clamp(40px, 5.5vw, 80px) 0;
+    gap: clamp(32px, 5.5vw, 80px);
+  }
+  .chip {
+    margin-bottom: clamp(10px, 2.8vh, 28px);
+  }
+  h1 {
+    font-size: clamp(36px, min(8.4vh, 5.4vw), 84px);
+    margin-bottom: clamp(10px, 2.8vh, 28px);
+  }
+  .lead {
+    font-size: clamp(14px, 1.9vh, 19px);
+    margin-bottom: clamp(14px, 4.8vh, 48px);
+  }
+  .countdown {
+    margin-bottom: clamp(10px, 2.4vh, 24px);
+  }
+  .countdown-unit {
+    padding: clamp(8px, 1.8vh, 18px) clamp(14px, 2.4vh, 24px);
+  }
+  .countdown-number {
+    font-size: clamp(26px, 4.4vh, 44px);
+  }
+  .email-note {
+    margin-top: clamp(8px, 1.4vh, 14px);
+  }
+  .panel {
+    margin-top: clamp(0px, 6vh, 60px);
+    padding: clamp(18px, 3.2vh, 32px);
+  }
+  .panel h3 {
+    margin-bottom: clamp(10px, 2.4vh, 24px);
+  }
+  .feature-list {
+    gap: clamp(8px, 1.8vh, 18px);
+  }
+  footer {
+    padding: clamp(12px, 2.8vh, 28px) clamp(40px, 5.5vw, 80px);
+  }
+}
+
+@media (max-width: 1023px) {
   .ba-page {
     height: auto;
     min-height: 100vh;
@@ -524,11 +573,140 @@ footer {
   }
   footer {
     padding: 22px 48px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-copy {
+    line-height: 1.5;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  } /* touch-sized on phones and tablets */
+}
+
+/* ── Short desktop windows (laptop browsers): tighter still ── */
+@media (min-width: 1024px) and (max-height: 700px) {
+  header {
+    padding-block: 10px;
+  }
+  main {
+    padding-top: 4px;
+  }
+  .chip,
+  h1 {
+    margin-bottom: 8px;
+  }
+  .lead {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .countdown-unit {
+    padding: 6px 12px;
+  }
+  .countdown-number {
+    font-size: 24px;
+  }
+  .panel {
+    margin-top: 0;
+  }
+  footer {
+    padding-block: 10px;
+  }
+}
+
+/* ── Too short to fit one screen: scroll instead of cutting content off ── */
+@media (min-width: 1024px) and (max-height: 559px) {
+  .ba-page {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  footer {
+    position: relative;
+    margin-top: 24px;
+  }
+}
+
+/* ── Portrait tablets: same locked one-screen page, stacked columns ── */
+@media (min-width: 740px) and (max-width: 1023px) and (min-height: 900px) {
+  .ba-page {
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+  }
+  header {
+    padding: clamp(14px, 2.4vh, 24px) 48px;
+  }
+  main {
+    padding: clamp(8px, 2.4vh, 40px) 48px 0;
+    gap: clamp(16px, 2.6vh, 32px);
+  }
+  .chip {
+    margin-bottom: clamp(10px, 2vh, 28px);
+  }
+  h1 {
+    font-size: clamp(36px, 5vh, 60px);
+    margin-bottom: clamp(10px, 2vh, 28px);
+  }
+  .lead {
+    font-size: clamp(15px, 1.6vh, 19px);
+    margin-bottom: clamp(12px, 2.2vh, 48px);
+  }
+  .countdown {
+    margin-bottom: clamp(10px, 2vh, 24px);
+  }
+  .countdown-unit {
+    padding: clamp(8px, 1.4vh, 18px) 20px;
+  }
+  .countdown-number {
+    font-size: clamp(28px, 3.6vh, 44px);
+  }
+  .panel {
+    padding: clamp(18px, 2.4vh, 32px);
+  }
+  .panel h3 {
+    margin-bottom: clamp(10px, 1.8vh, 24px);
+  }
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(10px, 1.6vh, 18px) 24px;
+  }
+  footer {
+    position: absolute;
+    margin-top: 0;
+    flex-direction: row;
+    text-align: left;
+    padding: clamp(12px, 2vh, 22px) 48px;
+  }
+  .footer-copy {
+    white-space: nowrap;
+  }
+  .footer-right > span {
+    display: none;
+  }
+}
+
+/* ── Shorter tablets (iPad mini in Safari): a little tighter ── */
+@media (min-width: 740px) and (max-width: 1023px) and (min-height: 900px) and (max-height: 1000px) {
+  .chip,
+  h1 {
+    margin-bottom: 8px;
+  }
+  .lead {
+    margin-bottom: 12px;
+  }
+  .countdown-number {
+    font-size: 28px;
   }
 }
 
 /* ── Mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 739px) {
   header {
     padding: 18px 20px;
     flex-wrap: wrap;
@@ -594,7 +772,6 @@ footer {
 
   .email-input {
     padding: 12px 14px;
-    font-size: 16px; /* iOS Safari zooms into inputs under 16px */
   }
 
   .btn-notify {
@@ -625,22 +802,10 @@ footer {
   footer {
     padding: 24px 20px 36px; /* extra bottom room clears the iPhone home bar */
     margin-top: 32px;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
-  .footer-copy {
-    line-height: 1.5;
   }
 
   .footer-right > span {
     display: none;
-  }
-
-  .social-link {
-    width: 44px;
-    height: 44px;
   }
 }
 
