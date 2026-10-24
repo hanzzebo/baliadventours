@@ -594,7 +594,7 @@ footer {
 
   .email-input {
     padding: 12px 14px;
-    font-size: 14px;
+    font-size: 16px; /* iOS Safari zooms into inputs under 16px */
   }
 
   .btn-notify {
@@ -623,12 +623,24 @@ footer {
   }
 
   footer {
-    padding: 18px 20px;
+    padding: 24px 20px 36px; /* extra bottom room clears the iPhone home bar */
     margin-top: 32px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-copy {
+    line-height: 1.5;
   }
 
   .footer-right > span {
     display: none;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
   }
 }
 
