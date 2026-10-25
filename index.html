@@ -1,203 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bali Adventours — Coming Soon</title>
-  <meta name="description"
-    content="Locally-led adventures, sustainable trails, fairer for everyone. Launching mid-June 2026." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bali Adventours: small-group tours and car rental in Bali</title>
+  <meta name="description" content="Small-group activities across Bali with local guides, plus car rental for a self-drive trip." />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="assets/stylesheets/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/stylesheets/site.css" />
 </head>
-
 <body>
-  <div class="ba-page">
+  <!-- Icon sprite: referenced below with <use href="#i-name"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-logo" viewBox="0 0 42 38" fill="currentColor"><ellipse cx="8" cy="10" rx="4.4" ry="3" transform="rotate(-8 8 10)"/><ellipse cx="20" cy="10" rx="4.4" ry="3"/><ellipse cx="32" cy="10" rx="4.4" ry="3" transform="rotate(8 32 10)"/><ellipse cx="14" cy="18" rx="4.4" ry="3" transform="rotate(-8 14 18)"/><ellipse cx="26" cy="18" rx="4.4" ry="3"/><ellipse cx="38" cy="18" rx="4.4" ry="3" transform="rotate(8 38 18)"/><ellipse cx="8" cy="26" rx="4.4" ry="3" transform="rotate(-8 8 26)"/><ellipse cx="20" cy="26" rx="4.4" ry="3"/><ellipse cx="32" cy="26" rx="4.4" ry="3" transform="rotate(8 32 26)"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M11 20A7 7 0 0 1 4 13c0-3 2-5 6-5h7v3a7 7 0 0 1-6 9Z"/><path d="M2 21c0-3 1.85-5.5 7-7"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 61 43" fill="currentColor"><path d="M21.79 0 13.07 17.2h13.07V43H0V17.2L8.71 0h13.08ZM56.64 0l-8.71 17.2H61V43H34.86V17.2L43.57 0h13.07Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm5 14.3c-.2.6-1.2 1.2-1.7 1.3-.4.1-1 .1-1.6-.1l-1.5-.6a10 10 0 0 1-3.7-3.3 4.3 4.3 0 0 1-.9-2.3c0-.6.3-1.2.8-1.5l.4-.1.4.1.6 1.3c.1.2 0 .4 0 .5l-.2.3-.4.4c-.1.1-.2.2-.1.4a4.7 4.7 0 0 0 1.6 2 6 6 0 0 0 1.7 1c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1.2.1 1.3.6 1.5.7l.3.2c0 .1 0 .4-.1.7Z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </svg>
 
-    <!-- Background layers -->
-    <div class="bg"></div>
-    <div class="bg-texture"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Header -->
-    <header>
-      <a href="#" class="logo">
-        <!-- 3×3 dots grid matching the design logo mark -->
-        <div class="logo-icon">
-          <div class="logo-dot"></div>
-          <div class="logo-dot"></div>
-          <div class="logo-dot"></div>
-          <div class="logo-dot"></div>
-          <div class="logo-dot"></div>
-          <div class="logo-dot empty"></div>
-          <div class="logo-dot"></div>
-          <div class="logo-dot empty"></div>
-          <div class="logo-dot"></div>
-        </div>
-        <!-- Stacked two-line logo text matching design -->
-        <div class="logo-text">
-          <span>Bali Adventours</span>
-        </div>
-      </a>
+  <header class="site-header">
+    <a class="logo" href="./" aria-label="Bali Adventours home">
+      <svg style="color: var(--green-500)" aria-hidden="true"><use href="#i-logo" /></svg>
+      <span>Bali Adventours</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg aria-hidden="true"><use href="#i-menu" /></svg>
+    </button>
+    <!-- TODO: tours.html, rent.html and about.html are not built yet -->
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="./" aria-current="page">Home</a>
+      <a href="#tours">Tours</a>
+      <a href="rent.html">Rent</a>
+      <a href="about.html">About Us</a>
+      <a class="btn btn-primary btn-sm" href="#plan">Plan a Trip</a>
+    </nav>
+  </header>
 
-      <div class="header-right">
-        <span class="header-label">Need us before launch?</span>
-        <a href="javascript:void(0)" class="btn-wa" target="_blank">
-          <!-- WhatsApp icon -->
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-          </svg>
-          +62 8xx xxxx xxxx
-        </a>
-      </div>
-    </header>
-
-    <!-- Main content grid -->
-    <main>
-      <!-- Left column -->
-      <div class="left">
-        <div class="chip">
-          <span class="chip-dot"></span>
-          Launching Soon
-        </div>
-
-        <h1>
-          Something quiet,<br>
-          <em>brewing in Bali.</em>
-        </h1>
-
-        <p class="lead">
-          We're rebuilding our booking flow with locally-led guides, sustainable trails,
-          and a fairer split for the families who host you. The full site goes live in a few weeks —
-          drop your email and we'll send a 20% early-bird code on launch day.
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <span class="chip"><span class="dot"></span> Now booking · Apr–Sep 2026</span>
+        <h1>Plan Your Bali Getaway with <span>Bali Adventours</span></h1>
+        <p class="hero-lead">
+          Choose from [60+] small-group activities or rent a car to drive yourself. Every trip is built around
+          Bali's most authentic experiences and the seasons that suit you best.
         </p>
-
-        <!-- Countdown -->
-        <div class="countdown">
-          <div class="countdown-unit">
-            <div class="countdown-number" id="cd-days">00</div>
-            <div class="countdown-label">days</div>
-          </div>
-          <div class="countdown-unit">
-            <div class="countdown-number" id="cd-hours">00</div>
-            <div class="countdown-label">hours</div>
-          </div>
-          <div class="countdown-unit">
-            <div class="countdown-number" id="cd-mins">00</div>
-            <div class="countdown-label">minutes</div>
-          </div>
-          <div class="countdown-unit">
-            <div class="countdown-number" id="cd-secs">00</div>
-            <div class="countdown-label">seconds</div>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#tours">Book Now <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          <a class="btn btn-secondary btn-lg" href="#views">See the views</a>
         </div>
-
-        <!-- Email form -->
-        <form class="email-form" id="email-form" onsubmit="handleSubmit(event)">
-          <input class="email-input" type="email" id="email-input" placeholder="your@email.com" autocomplete="email" />
-          <button type="submit" class="btn-notify">
-            Notify me
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
+        <!-- shortcut: search jumps to the tour list; wire it to real filtering once tours.html exists -->
+        <form class="hero-search" action="#tours" role="search" aria-label="Find a tour">
+          <div class="field">
+            <svg aria-hidden="true"><use href="#i-pin" /></svg>
+            <label class="visually-hidden" for="search-where">Where</label>
+            <input id="search-where" name="where" type="text" placeholder="Where?" autocomplete="off" />
+          </div>
+          <div class="field">
+            <svg aria-hidden="true"><use href="#i-calendar" /></svg>
+            <label class="visually-hidden" for="search-when">When</label>
+            <input id="search-when" name="when" type="text" placeholder="Dates" autocomplete="off" />
+          </div>
+          <div class="field">
+            <svg aria-hidden="true"><use href="#i-users" /></svg>
+            <label class="visually-hidden" for="search-guests">Guests</label>
+            <input id="search-guests" name="guests" type="number" min="1" max="20" inputmode="numeric" placeholder="Guests" />
+          </div>
+          <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-search" /></svg> Search</button>
         </form>
-        <div class="success-msg" id="success-msg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-          You're in! We'll email on launch day with your 20% early-bird code.
-        </div>
-
-        <p class="email-note">
-          We'll email once. No newsletter spam, no third-party sharing.
-          <strong>2,481 travellers already on the list.</strong>
-        </p>
       </div>
 
-      <!-- Right panel -->
-      <aside class="panel">
-        <div class="panel-eyebrow">What's launching</div>
-        <h3>New experiences, three rivers deep.</h3>
-        <ul class="feature-list">
-          <li class="feature-item">
-            <span class="feature-num">01</span>
-            <div>
-              <div class="feature-title">Curated trails</div>
-              <div class="feature-desc">12 hand-picked trips, scored on quietness, beauty, and local impact.</div>
-            </div>
-          </li>
-          <li class="feature-item">
-            <span class="feature-num">02</span>
-            <div>
-              <div class="feature-title">Real-time booking</div>
-              <div class="feature-desc">Pay deposit, confirm in 90 seconds. No back-and-forth WhatsApp.</div>
-            </div>
-          </li>
-          <li class="feature-item">
-            <span class="feature-num">03</span>
-            <div>
-              <div class="feature-title">Bike &amp; car rentals</div>
-              <div class="feature-desc">Helmets, insurance, free villa delivery — bundled into one quote.</div>
-            </div>
-          </li>
-          <li class="feature-item">
-            <span class="feature-num">04</span>
-            <div>
-              <div class="feature-title">Local guide profiles</div>
-              <div class="feature-desc">Read about Made, Wayan, Komang. Pick the guide, then the day.</div>
-            </div>
-          </li>
-        </ul>
-      </aside>
-    </main>
+      <div class="hero-media">
+        <img src="assets/images/ulun-danu.jpg" width="1110" height="740"
+          alt="Ulun Danu temple with its tiered shrines beside a lake, under cloudy mountains" />
+        <div class="float-card travellers">
+          <div class="float-icon"><svg aria-hidden="true"><use href="#i-leaf" /></svg></div>
+          <div>
+            <div class="float-title">[2,400+] travellers</div>
+            <div class="float-sub">guided this year alone</div>
+          </div>
+        </div>
+        <div class="float-card rating">
+          <span class="stars" aria-hidden="true">
+            <svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg>
+          </span>
+          <span class="float-title">[4.92] · [1,890] reviews</span>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer — absolute bottom of 100vh ── -->
-    <footer>
-      <span class="footer-copy">© 2026 Bali Adventours · Crafted in Canggu</span>
-      <div class="footer-copy">
-        <span>Background photo by</span>
-        <a href="https://www.pexels.com/photo/stunning-rice-terraces-in-bali-indonesia-35343781" class="footer-copy">
-          <b>Tom Fisk</b>
+    <!-- Stats: placeholders until real figures are confirmed -->
+    <section class="stats" aria-label="Bali Adventours in numbers">
+      <div class="stat"><span class="stat-num">[12+]</span><span class="stat-label">Years guiding Bali</span></div>
+      <div class="stat"><span class="stat-num">[64]</span><span class="stat-label">Curated experiences</span></div>
+      <div class="stat"><span class="stat-num">[38]</span><span class="stat-label">Local partner villages</span></div>
+      <div class="stat"><span class="stat-num">[100%]</span><span class="stat-label">Carbon-offset trips</span></div>
+    </section>
+
+    <!-- Tours -->
+    <section class="section" id="tours" aria-labelledby="tours-title">
+      <div class="tours-head">
+        <div class="section-head">
+          <span class="eyebrow">Activities</span>
+          <h2 id="tours-title">Explore Bali's Best Experiences</h2>
+          <p>Discover a variety of activities and tours tailored for an unforgettable Bali adventure.</p>
+        </div>
+        <a class="btn btn-ghost" href="tours.html">View all tours <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </div>
+
+      <div class="tour-grid">
+        <article class="tour-card">
+          <div class="tour-photo">
+            <img src="assets/images/ubud-temple-garden.jpg" width="720" height="405" loading="lazy"
+              alt="Stone statues and a red-roofed shrine in a Balinese temple garden" />
+            <div class="tour-tags"><span>Culture</span><span>Nature</span></div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><svg aria-hidden="true"><use href="#i-pin" /></svg>Central Bali</span>
+              <span><svg aria-hidden="true"><use href="#i-star" /></svg>[4.9] ([128])</span>
+            </div>
+            <h3><a href="tours.html">Ubud Highlights: Cultural &amp; Nature Tour</a></h3>
+            <p>A deep dive into Ubud's culture and nature: Monkey Forest, Tegalalang Rice Terrace, Tegenungan Waterfall, and a jungle swing.</p>
+            <div class="tour-foot">
+              <span><svg aria-hidden="true"><use href="#i-clock" /></svg> 9h</span>
+              <span>from <span class="price">$65</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-photo">
+            <div class="img-ph" role="img" aria-label="Photo coming: Nusa Penida">Nusa Penida</div>
+            <div class="tour-tags"><span>Adventure</span><span>Ocean</span></div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><svg aria-hidden="true"><use href="#i-pin" /></svg>Nusa Penida</span>
+              <span><svg aria-hidden="true"><use href="#i-star" /></svg>[4.8] ([211])</span>
+            </div>
+            <h3><a href="tours.html">Nusa Penida Escape: Snorkel &amp; Manta Rays</a></h3>
+            <p>Private boat to Nusa Penida with snorkeling at four prime spots, including manta encounters, plus an island land tour.</p>
+            <div class="tour-foot">
+              <span><svg aria-hidden="true"><use href="#i-clock" /></svg> 11h</span>
+              <span>from <span class="price">$95</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-photo">
+            <div class="img-ph" role="img" aria-label="Photo coming: Gianyar">Gianyar</div>
+            <div class="tour-tags"><span>Adventure</span></div>
+          </div>
+          <div class="tour-body">
+            <div class="tour-meta">
+              <span><svg aria-hidden="true"><use href="#i-pin" /></svg>Gianyar</span>
+              <span><svg aria-hidden="true"><use href="#i-star" /></svg>[4.7] ([96])</span>
+            </div>
+            <h3><a href="tours.html">ATV Quad Bike + Waterfall + Gorilla Cave</a></h3>
+            <p>ATV through Bali's countryside, the unique Gorilla Cave, and a refreshing dip at a hidden waterfall, capped with Balinese lunch.</p>
+            <div class="tour-foot">
+              <span><svg aria-hidden="true"><use href="#i-clock" /></svg> 6h</span>
+              <span>from <span class="price">$75</span></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Views -->
+    <section class="section views" id="views" aria-labelledby="views-title">
+      <div class="section-head center">
+        <span class="eyebrow">Postcards</span>
+        <h2 id="views-title">Bali's Breathtaking Views</h2>
+        <p>A few corners of the island we keep coming back to.</p>
+      </div>
+      <div class="views-grid">
+        <div class="img-ph v-wide v-tall" role="img" aria-label="Photo coming: Tegallalang rice terrace">Tegallalang / Rice terrace</div>
+        <img class="v-narrow" src="assets/images/ulun-danu.jpg" width="1110" height="740" loading="lazy"
+          alt="Ulun Danu temple beside a lake" />
+        <img class="v-narrow" src="assets/images/ubud-temple-garden.jpg" width="720" height="405" loading="lazy"
+          alt="Stone statues in a Balinese temple garden" />
+        <div class="img-ph v-narrow v-tall" role="img" aria-label="Photo coming: Mount Batur at sunrise">Mount Batur / Sunrise</div>
+        <div class="img-ph v-wide" role="img" aria-label="Photo coming: Kelingking, Nusa Penida">Nusa Penida / Kelingking</div>
+      </div>
+    </section>
+
+    <!-- Testimonials: placeholders. Only publish quotes from real guests, with their permission. -->
+    <section class="section testimonials" aria-labelledby="testimonials-title">
+      <div class="section-head center">
+        <span class="eyebrow">Travellers</span>
+        <h2 id="testimonials-title">Testimonials</h2>
+        <p>Stories from people who've explored Bali with us.</p>
+      </div>
+      <div class="quote-rows">
+        <div class="quote-row">
+          <figure class="quote"><svg aria-hidden="true"><use href="#i-quote" /></svg><div><blockquote>[Quote from a real guest]</blockquote><figcaption><span class="avatar" aria-hidden="true"></span><span><b>[Guest name]</b>[City, Country]</span></figcaption></div></figure>
+          <figure class="quote"><svg aria-hidden="true"><use href="#i-quote" /></svg><div><blockquote>[Quote from a real guest]</blockquote><figcaption><span class="avatar" aria-hidden="true"></span><span><b>[Guest name]</b>[City, Country]</span></figcaption></div></figure>
+          <figure class="quote"><svg aria-hidden="true"><use href="#i-quote" /></svg><div><blockquote>[Quote from a real guest]</blockquote><figcaption><span class="avatar" aria-hidden="true"></span><span><b>[Guest name]</b>[City, Country]</span></figcaption></div></figure>
+        </div>
+        <div class="quote-row">
+          <figure class="quote"><svg aria-hidden="true"><use href="#i-quote" /></svg><div><blockquote>[Quote from a real guest]</blockquote><figcaption><span class="avatar" aria-hidden="true"></span><span><b>[Guest name]</b>[City, Country]</span></figcaption></div></figure>
+          <figure class="quote"><svg aria-hidden="true"><use href="#i-quote" /></svg><div><blockquote>[Quote from a real guest]</blockquote><figcaption><span class="avatar" aria-hidden="true"></span><span><b>[Guest name]</b>[City, Country]</span></figcaption></div></figure>
+          <figure class="quote"><svg aria-hidden="true"><use href="#i-quote" /></svg><div><blockquote>[Quote from a real guest]</blockquote><figcaption><span class="avatar" aria-hidden="true"></span><span><b>[Guest name]</b>[City, Country]</span></figcaption></div></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-wrap" id="plan">
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="cta-copy">
+          <span class="chip chip-dark">Limited season · 2026</span>
+          <h2 id="cta-title">Tell us your dates. We'll plan a Bali week you'll actually remember.</h2>
+          <p>A 15-minute call with a Bali specialist. Free, with no commitment, and useful answers from someone who lives here.</p>
+        </div>
+        <div class="cta-actions">
+          <!-- TODO: point to the real booking or WhatsApp link -->
+          <a class="btn btn-primary btn-lg" href="#plan">Plan my trip <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          <a class="btn btn-outline-light" href="tours.html">Browse all tours</a>
+        </div>
+        <svg class="cta-leaf" aria-hidden="true"><use href="#i-leaf" /></svg>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="./">
+          <svg style="color: var(--green-300)" aria-hidden="true"><use href="#i-logo" /></svg>
+          <span>Bali Adventours</span>
         </a>
-      </div>
-      <div class="footer-right">
-        <span>Follow the build</span>
+        <p>
+          Showcasing authentic Balinese exploration. Hand-picked tours, local guides, and the island's quietest
+          corners, curated for travellers who want more than a postcard.
+        </p>
+        <!-- TODO: real social links -->
         <div class="socials">
-          <a href="#" class="social-link" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </a>
-          <a href="javascript:void(0)" class="social-link" aria-label="WhatsApp">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-            </svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Website">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-            </svg>
-          </a>
+          <a href="#" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig" /></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#i-wa" /></svg></a>
+          <a href="#" aria-label="Website"><svg aria-hidden="true"><use href="#i-globe" /></svg></a>
         </div>
       </div>
-    </footer>
+      <nav aria-labelledby="f-explore">
+        <h2 id="f-explore">Explore</h2>
+        <ul>
+          <li><a href="#">Hidden Gems</a></li>
+          <li><a href="#">Beaches</a></li>
+          <li><a href="#">Cultures</a></li>
+          <li><a href="#">Waterfall Guide</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-company">
+        <h2 id="f-company">Company</h2>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Our Guides</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </nav>
+      <div class="footer-news">
+        <h2>Stay in touch</h2>
+        <p>Monthly dispatches from the island. No spam.</p>
+        <!-- TODO: connect to an email provider; until then this form sends nothing -->
+        <form id="news-form" novalidate>
+          <label class="visually-hidden" for="news-email">Email address</label>
+          <input id="news-email" type="email" placeholder="you@email.com" autocomplete="email" required />
+          <button class="btn btn-primary btn-sm" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bali Adventours. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </nav>
+    </div>
+  </footer>
 
-  </div><!-- /.ba-page -->
-  <script src="assets/javascripts/index.js"></script>
+  <script src="assets/javascripts/site.js"></script>
 </body>
-
 </html>
